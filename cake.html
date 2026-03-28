@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Level 20 Unlocked</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:radial-gradient(circle at 30% 30%, #1a3c7a, #030b1f 60%);
+color:white;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* SHOOTING STAR */
+.shooting{
+position:absolute;
+width:3px;
+height:120px;
+background:linear-gradient(white,transparent);
+transform:rotate(45deg);
+animation:shoot 3s linear infinite;
+}
+
+@keyframes shoot{
+0%{transform:translate(-200px,-200px) rotate(45deg);opacity:1}
+100%{transform:translate(1400px,900px) rotate(45deg);opacity:0}
+}
+
+/* FLOATING PROTEIN JARS */
+.jar{
+position:absolute;
+width:90px;
+opacity:.85;
+animation:float 10s ease-in-out infinite;
+z-index:1;
+}
+
+/* SAFE EDGE POSITIONS (unchanged) */
+.jar:nth-child(1){ top:30px; left:40px; }
+.jar:nth-child(2){ top:180px; left:20px; }
+.jar:nth-child(3){ top:340px; left:60px; }
+.jar:nth-child(4){ top:60px; right:40px; }
+.jar:nth-child(5){ top:220px; right:30px; }
+.jar:nth-child(6){ top:380px; right:70px; }
+.jar:nth-child(7){ top:20px; left:45%; }
+.jar:nth-child(8){ top:100px; left:60%; }
+.jar:nth-child(9){ bottom:60px; right:60px; }
+
+@keyframes float{
+0%{transform:translateY(0px) rotate(-6deg)}
+50%{transform:translateY(-25px) rotate(6deg)}
+100%{transform:translateY(0px) rotate(-6deg)}
+}
+
+/* CAKE - LEFT + VERTICALLY CENTERED */
+.cake-container{
+position:absolute;
+left:60px;
+top:50%;
+transform:translateY(-50%);
+z-index:3;
+}
+
+.cake{
+width:220px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+transition: transform 0.4s;
+}
+
+.cake:hover{
+transform: scale(1.05);
+}
+
+/* CENTER MESSAGE PANEL */
+.panel{
+position:relative;
+z-index:5;
+width:480px;
+padding:40px;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+box-shadow:0 0 50px rgba(0,150,255,.4);
+text-align:center;
+}
+
+.panel h1{
+font-size:26px;
+margin-bottom:20px;
+}
+
+.panel p{
+line-height:1.6;
+color:#dfe8ff;
+margin-bottom:25px;
+}
+
+.space-btn{
+padding:16px 35px;
+font-size:16px;
+border-radius:40px;
+border:none;
+cursor:pointer;
+color:#9de8ff;
+background:rgba(0,200,255,.15);
+box-shadow:0 0 25px #00cfff inset, 0 0 25px #00cfff;
+transition:.3s;
+}
+
+.space-btn:hover{
+transform:scale(1.08);
+}
+</style>
+</head>
+
+<body>
+
+<!-- Shooting Stars -->
+<div class="shooting" style="top:80px;left:300px"></div>
+<div class="shooting" style="top:200px;left:900px"></div>
+
+<!-- Floating Protein Jars -->
+<img class="jar" src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+<img class="jar" src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+<img class="jar" src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+<img class="jar" src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+<img class="jar" src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+<img class="jar" src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+<img class="jar" src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+<img class="jar" src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+<img class="jar" src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+
+<!-- Cake -->
+<div class="cake-container">
+    <img src="ChatGPT Image Mar 10, 2026, 10_42_31 PM.png" class="cake">
+</div>
+
+<!-- Centered Message -->
+<div class="panel">
+<h1>Level 20 Unlocked: Gravity is Just a Suggestion.</h1>
+
+<p>
+Happy 20th Birthday! You've spent two decades conquering Earth's gravity one rep at a time.  
+May your gains be astronomical, your recovery light-speed, and your protein shakes never clumpy.  
+Keep reaching for the stars — just don’t forget to hit legs while you’re up there.
+</p>
+
+<button class="space-btn" onclick="goToGifts()">
+🚀 Claim ur gifts Hehe ✨
+</button>
+</div>
+
+<script>
+function goToGifts() {
+    window.location.href = "rewards.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cosmic Rewards 🎁</title>
+
+<style>
+
+/* ================= BODY ================= */
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle at bottom,#020111 0%,#000000 100%);
+font-family:"Comic Sans MS", cursive;
+color:white;
+text-align:center;
+overflow:hidden;
+position:relative;
+}
+
+/* ================= MOVING STAR LAYER ================= */
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 80s linear infinite;
+z-index:-5;
+}
+
+@keyframes moveStars{
+from{background-position:0 0;}
+to{background-position:10000px 5000px;}
+}
+
+/* ================= TWINKLING DOT STARS ================= */
+.twinkle{
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.2;}
+to{opacity:1;}
+}
+
+/* ================= SHOOTING STARS ================= */
+.shooting-star{
+position:absolute;
+width:3px;
+height:120px;
+background:linear-gradient(white, transparent);
+animation:shoot 4s linear infinite;
+opacity:0.8;
+z-index:-3;
+}
+
+@keyframes shoot{
+0%{
+transform:translate(-300px,-300px) rotate(45deg);
+opacity:1;
+}
+100%{
+transform:translate(1500px,900px) rotate(45deg);
+opacity:0;
+}
+}
+
+/* ================= FLOATING PLANETS ================= */
+.planet{
+position:absolute;
+border-radius:50%;
+animation:floatPlanet 12s ease-in-out infinite;
+z-index:-4;
+}
+
+@keyframes floatPlanet{
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-20px);}
+}
+
+.planet1{
+width:120px;
+height:120px;
+background:radial-gradient(circle,#ff6ec4,#7873f5);
+top:15%;
+left:10%;
+}
+
+.planet2{
+width:90px;
+height:90px;
+background:radial-gradient(circle,#00f5ff,#0066ff);
+bottom:20%;
+right:15%;
+animation-duration:15s;
+}
+
+.ring-planet{
+width:140px;
+height:140px;
+background:radial-gradient(circle,#fddb92,#d1fdff);
+position:absolute;
+top:60%;
+left:5%;
+border-radius:50%;
+z-index:-4;
+animation:floatPlanet 18s infinite;
+}
+
+.ring-planet::after{
+content:"";
+position:absolute;
+width:200px;
+height:40px;
+border:4px solid rgba(255,255,255,0.6);
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) rotate(25deg);
+}
+
+.rocket{
+position:absolute;
+font-size:3rem;
+bottom:10%;
+right:5%;
+animation:rocketFloat 6s ease-in-out infinite;
+z-index:-3;
+}
+
+@keyframes rocketFloat{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-25px);}
+}
+
+.container{
+z-index:2;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:70px;
+text-shadow:0 0 25px #ff00ff;
+}
+
+.gift-section{
+display:flex;
+gap:80px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.gift-box{
+width:220px;
+height:220px;
+border-radius:25px;
+background:linear-gradient(135deg,#ff00cc,#3333ff);
+cursor:pointer;
+transition:0.6s;
+box-shadow:0 0 35px #ff00ff;
+position:relative;
+}
+
+.gift-box::before{
+content:"🎁";
+font-size:5rem;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+.gift-box:hover{
+transform:scale(1.2) rotate(10deg);
+box-shadow:0 0 70px #ff00ff;
+}
+
+.popup{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,40,0.95);
+padding:40px;
+border-radius:20px;
+width:350px;
+box-shadow:0 0 50px #ff00ff;
+z-index:5;
+}
+
+.popup img{
+width:200px;
+margin-bottom:20px;
+}
+
+.popup button{
+margin-top:20px;
+padding:12px 30px;
+border:none;
+border-radius:20px;
+background:#ff00cc;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* ================= NEW NEXT BUTTON ================= */
+.next-page-btn{
+margin-top:60px;
+padding:15px 40px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#00f5ff,#0066ff);
+color:white;
+font-size:1.1rem;
+cursor:pointer;
+box-shadow:0 0 25px #00f5ff;
+transition:0.4s;
+}
+
+.next-page-btn:hover{
+transform:scale(1.15);
+box-shadow:0 0 50px #00f5ff;
+}
+
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="twinkle" style="top:20%; left:30%;"></div>
+<div class="twinkle" style="top:50%; left:60%; animation-delay:1s;"></div>
+<div class="twinkle" style="top:70%; left:20%; animation-delay:0.5s;"></div>
+<div class="twinkle" style="top:35%; left:80%; animation-delay:1.5s;"></div>
+
+<div class="shooting-star" style="top:10%; left:5%; animation-delay:0s;"></div>
+<div class="shooting-star" style="top:40%; left:60%; animation-delay:2s;"></div>
+
+<div class="planet planet1"></div>
+<div class="planet planet2"></div>
+<div class="ring-planet"></div>
+
+<div class="rocket">🚀</div>
+
+<div class="container">
+<h1>🌌 Cosmic Rewards 🎁</h1>
+
+<div class="gift-section">
+<div class="gift-box" onclick="openGift(1)"></div>
+<div class="gift-box" onclick="openGift(2)"></div>
+<div class="gift-box" onclick="openGift(3)"></div>
+</div>
+
+<!-- ✅ NEW BUTTON ADDED HERE -->
+<button class="next-page-btn" onclick="goToNextPage()">
+🚀 Continue To Next ...
+</button>
+
+</div>
+
+<div class="popup" id="popup">
+<div id="popupContent"></div>
+<button onclick="closePopup()">Close</button>
+</div>
+
+<script>
+function openGift(num){
+const popup=document.getElementById("popup");
+const content=document.getElementById("popupContent");
+
+if(num===1){
+content.innerHTML=`
+<img src="prd_3907885-MuscleBlaze-Biozyme-Performance-Whey-3 - Copy.webp">
+<p>Here's what u asked hehe 😌</p>
+`;
+}
+else if(num===2){
+content.innerHTML=`
+<p style="font-size:1.3rem;">
+heyyy u found me hehe 😜<br>
+im ur gift as a friend hehe 💖
+</p>
+`;
+}
+else{
+content.innerHTML=`
+<p style="font-size:1.3rem;">
+🌠 Secret Cosmic Wish!<br>
+May this year glow brighter than every star ✨
+</p>
+`;
+}
+
+popup.style.display="block";
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+/* ✅ NEW REDIRECT FUNCTION */
+function goToNextPage(){
+window.location.href="last.html";  // change if needed
+}
+</script>
+
+</body>
+</html>

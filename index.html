@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Birthday Message 🌟</title>
+
+<style>
+
+/* Background */
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle at bottom,#020111 0%,#000000 100%);
+font-family:"Comic Sans MS", cursive;
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+/* Moving stars */
+
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 60s linear infinite;
+}
+
+@keyframes moveStars{
+from{background-position:0 0;}
+to{background-position:10000px 5000px;}
+}
+
+/* Content container */
+
+.container{
+position:relative;
+z-index:2;
+max-width:700px;
+padding:20px;
+}
+
+h1{
+font-size:50px;
+color:#7df9ff;
+text-shadow:0 0 20px #00f7ff;
+}
+
+p{
+font-size:20px;
+line-height:1.6;
+}
+
+/* Button */
+
+button{
+margin-top:30px;
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#00f7ff;
+cursor:pointer;
+box-shadow:0 0 20px #00f7ff;
+font-family:"Comic Sans MS", cursive;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+<h1>Happy Birthday 🌟</h1>
+
+<p>
+I just know by now as ur friend that you dont like grand surprises;
+ So here I am today tried my best to prepare a cute lil surprise for you;
+ For you who became my firstever friend out of hundreds of humans in university hehe!!
+Thank you for being my 1st friend!!
+</p>
+
+<p>
+Wishing you happiness, adventure, and success
+in every galaxy of life 🚀✨
+Happiee Birthday Dumbasss!! 
+</p>
+
+<button onclick="nextPage()">Explore the Memory Galaxy 🌌</button>
+
+</div>
+
+<script>
+
+function nextPage(){
+window.location.href="3.html";
+}
+
+</script>
+
+</body>
+</html>
